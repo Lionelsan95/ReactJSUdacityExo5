@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class SearchBar extends Component {
+class AddItem extends Component {
   
   state = {
     article: ''
@@ -30,4 +30,4 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+export default AddItem;

@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import SearchBar from './SearchBar.js';
+import AddItem from './AddItem.js';
 import ItemsList from './ItemsList.js';
 import Header from './Header.js';
+import DeleteItem from './DeleteItem.js';
 
 class App extends React.Component {
   state = {
@@ -32,17 +33,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+      
 		<Header />
       
         <h2>Shopping List</h2>
 
-		<SearchBar addItem={this.addItem}  />
+		<AddItem addItem={this.addItem}  />
 
-        <button onClick={this.deleteLastItem} disabled={this.noItemsFound()}>
-          Delete Last Item
-        </button>
-
-        <p className="items">Items</p>
+		<DeleteItem deleteLastItem={this.deleteLastItem} noItemsFound={this.noItemsFound} />
 
 		<ItemsList items={this.state.items} />
 
